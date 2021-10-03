@@ -1,2 +1,2 @@
-basedir=$PWD/../openresty
-docker run --privileged=true --restart=always  --net=host  --name openresty -v $basedir/nginx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf -v $basedir/run:/var/run/openresty -v $basedir/nginx/lua:/usr/local/openresty/nginx/lua -v $basedir/nginx/conf.d:/etc/nginx/conf.d -v $basedir/nginx/logs:/usr/local/openresty/nginx/logs -it openresty/openresty
+basedir=$PWD
+docker run --privileged=true --restart=always  --net=host  --name openresty -v $basedir/nginx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf -v $basedir/run:/var/run/openresty -v $basedir/nginx/lua:/usr/local/openresty/nginx/lua -v $basedir/nginx/conf.d:/etc/nginx/conf.d -v $basedir/nginx/logs:/usr/local/openresty/nginx/logs -v /opt/explorer/dist:/etc/nginx/dist -it openresty/openresty
